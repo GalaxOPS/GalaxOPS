@@ -16,8 +16,6 @@
 </div>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/khetaguridimitri" target="_blank" style="margin:0 10px;"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a> 
-  <a href="https://twitter.com/xetaguridimitri" target="_blank" style="margin:0 10px;"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" /></a>
   <a href="https://galaxsus.com" target="_blank" style="margin:0 10px;"><img src="https://img.shields.io/badge/Website-Galaxsus.com-0F0F0F?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website" /></a>
 </p>
 
