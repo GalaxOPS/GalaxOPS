@@ -8,12 +8,11 @@ const PRECACHE_ASSETS = [
   '/index.html',
   '/manifest.json',
   '/favicon.ico',
-  '/favicon-16x16.png',
-  '/favicon-32x32.png',
-  '/favicon-96x96.png',
-  '/android-icon-192x192.png',
-  '/apple-icon-180x180.png',
-  '/style.css',
+  'image/favicon-16x16.png',
+  'image/favicon-32x32.png',
+  'image/favicon-96x96.png',
+  'image/android-icon-192x192.png',
+  'image/apple-icon-180x180.png',
   '/app.js'
 ];
 
