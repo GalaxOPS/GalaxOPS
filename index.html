@@ -68,6 +68,93 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="GalaxOPS">
+
+<script>
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+        
+        // Check for updates
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          console.log('Service Worker update found!');
+          
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              console.log('New content is available; please refresh.');
+              // You could show a "Update available" notification here
+            }
+          });
+        });
+      })
+      .catch(error => {
+        console.log('Service Worker registration failed:', error);
+      });
+  });
+  
+  // Handle offline/online status
+  window.addEventListener('online', () => {
+    console.log('You are online!');
+    document.documentElement.classList.remove('offline');
+  });
+  
+  window.addEventListener('offline', () => {
+    console.log('You are offline!');
+    document.documentElement.classList.add('offline');
+  });
+}
+
+// Install prompt for PWA
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  
+  // Show install button
+  const installButton = document.createElement('button');
+  installButton.id = 'installPWA';
+  installButton.innerHTML = '📱 Install App';
+  installButton.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--neon);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 234, 255, 0.3);
+  `;
+  
+  installButton.addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted install');
+      } else {
+        console.log('User dismissed install');
+      }
+      deferredPrompt = null;
+      installButton.remove();
+    });
+  });
+  
+  document.body.appendChild(installButton);
+  
+  // Auto-hide after 10 seconds
+  setTimeout(() => {
+    if (installButton.parentNode) {
+      installButton.remove();
+    }
+  }, 10000);
+});
+</script>
     
     <script type="application/ld+json">
     {
@@ -929,6 +1016,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 </body>
 </html>
+
 
 
 
