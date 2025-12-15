@@ -249,7 +249,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
         });
     </script>
     
-    <!-- CSS Styles will go here -->
+    <!-- CSS Styles -->
     <style>
         /* Your existing CSS styles here */
         :root {
@@ -291,6 +291,37 @@ window.addEventListener('beforeinstallprompt', (e) => {
     <!-- Hidden H1 for SEO -->
     <h1 class="sr-only">Khetaguri Dimitri - GalaxOPS: SEO & Cybersecurity Engineer Portfolio</h1>
     
+    <!-- Side Navigation Boxes -->
+    <div class="side-navigation">
+        <!-- Left Box - GitHub -->
+        <a href="https://github.com/GalaxOPS" target="_blank" class="side-box left-box">
+            <div class="side-box-content">
+                <div class="side-box-icon">🚀</div>
+                <div class="side-box-text">
+                    <h3>GitHub</h3>
+                    <p>View my projects & code</p>
+                </div>
+                <div class="side-box-arrow">→</div>
+            </div>
+            <div class="side-box-glow"></div>
+        </a>
+        
+        <!-- Right Box - Custom Link (commented for now) -->
+        <!--
+        <a href="YOUR_LINK_HERE" target="_blank" class="side-box right-box">
+            <div class="side-box-content">
+                <div class="side-box-icon">⚡</div>
+                <div class="side-box-text">
+                    <h3>Custom</h3>
+                    <p>Description here</p>
+                </div>
+                <div class="side-box-arrow">→</div>
+            </div>
+            <div class="side-box-glow"></div>
+        </a>
+        -->
+    </div>
+    
     <!-- Rest of your HTML content -->
     <div class="led-effect"></div>
     <!-- ... -->
@@ -330,6 +361,178 @@ window.addEventListener('beforeinstallprompt', (e) => {
         linear-gradient(90deg, rgba(88,166,255,0.05) 1px, transparent 1px);
       background-size: 60px 60px;
       z-index: -1;
+    }
+
+    /* Side Navigation Boxes */
+    .side-navigation {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 100;
+      padding: 0 20px;
+    }
+
+    .side-box {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      pointer-events: all;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transform: translateX(0);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-box.left-box {
+      transform: translateX(-10px);
+    }
+
+    .side-box.right-box {
+      transform: translateX(10px);
+    }
+
+    .side-box:hover {
+      width: 300px;
+      transform: translateX(0) scale(1.05);
+      border-color: var(--neon);
+      box-shadow: 
+        0 0 30px rgba(0, 234, 255, 0.3),
+        0 0 60px rgba(0, 234, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .side-box:hover .side-box-content {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .side-box-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.4s ease;
+      width: 100%;
+    }
+
+    .side-box:hover .side-box-content {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .side-box-icon {
+      font-size: 2rem;
+      min-width: 40px;
+      text-align: center;
+      text-shadow: 0 0 15px currentColor;
+    }
+
+    .side-box-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .side-box-text h3 {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .side-box-text p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .side-box-arrow {
+      font-size: 1.5rem;
+      color: var(--neon);
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .side-box:hover .side-box-arrow {
+      opacity: 1;
+      transform: translateX(0);
+      animation: arrowPulse 1s infinite;
+    }
+
+    @keyframes arrowPulse {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(5px); }
+    }
+
+    .side-box-glow {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 234, 255, 0.1),
+        transparent
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .side-box:hover .side-box-glow {
+      opacity: 1;
+      animation: glowMove 2s infinite;
+    }
+
+    @keyframes glowMove {
+      0%, 100% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .side-navigation {
+        padding: 0 10px;
+      }
+      
+      .side-box {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .side-box:hover {
+        width: 250px;
+      }
+      
+      .side-box-icon {
+        font-size: 1.5rem;
+      }
+      
+      .side-box-text h3 {
+        font-size: 1rem;
+      }
+      
+      .side-box-text p {
+        font-size: 0.8rem;
+      }
     }
 
     .led-effect {
@@ -860,18 +1063,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-title">🏛️ Institutional & Corporate</div>
   <div class="cards">
     <div class="card"><h3>Patriarchate</h3><p>Official Patriarchate website – SEO, speed & accessibility optimization</p><a href="https://patriarchate.ge" target="_blank">Visit →</a></div>
-    <div class="card"><h3>Worldconsortium</h3><p>Global organization – multilingual & international SEO</p><a href="https://worldconsortium.org" target="_blank">Visit →</a></div>
+    <div class="card"><h3>WorldConsortium</h3><p>Global organization – multilingual & international SEO</p><a href="https://worldconsortium.org" target="_blank">Visit →</a></div>
     <div class="card"><h3>BTCopyright</h3><p>Copyright services – commercial & lead‑generation SEO</p><a href="https://btcopyright.com" target="_blank">Visit →</a></div>
     <div class="card"><h3>Experti</h3><p>Analytics & expert content platform</p><a href="https://experti.ge" target="_blank">Visit →</a></div>
+    <div class="card"><h3>FrontNews</h3><p>Analytics & expert content platform</p><a href="https://frontnews.ge/" target="_blank">Visit →</a></div>
+    <div class="card"><h3>E-Gamers</h3><p>Analytics & SEO</p><a href="https://egamers.ge/" target="_blank">Visit →</a></div>
   </div>
 </section>
 
 <section>
   <div class="section-title">🧑‍💼 Job & Marketplace Platforms</div>
   <div class="cards">
-    <div class="card"><h3>Joblist</h3><p>Job portal – dynamic indexing & local SEO</p><a href="https://joblist.ge" target="_blank">Visit →</a></div>
+    <div class="card"><h3>JobList</h3><p>Job portal – dynamic indexing & local SEO</p><a href="https://joblist.ge" target="_blank">Visit →</a></div>
+    <div class="card"><h3>FardInteri</h3><p>SEO Optimization</p><a href="https://fardinteri.ge" target="_blank">Visit →</a></div>
     <div class="card"><h3>GalaxsUS</h3><p>Global job platform – multilingual SEO</p><a href="https://galaxsus.com" target="_blank">Visit →</a></div>
-    <div class="card"><h3>SellHub</h3><p>Real estate marketplace – Maps & listings SEO</p><a href="https://sellhub.ge" target="_blank">Visit →</a></div>
+    <div class="card"><h3>SellHubGe</h3><p>Real estate marketplace – Maps & listings SEO</p><a href="https://sellhub.ge" target="_blank">Visit →</a></div>
+    <div class="card"><h3>HackersGe</h3><p>Cyber News Platform – Apps & listings SEO</p><a href="https://hackers.ge" target="_blank">Visit →</a></div>
+    <div class="card"><h3>Cyber Govs</h3><p>Cyber Forum Platform – Contents</p><a href="https://cybergovs.com" target="_blank">Visit →</a></div>
   </div>
 </section>
 
@@ -883,45 +1091,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="card"><h3>Zino Game</h3><p>Online casino – technical SEO</p><a href="https://zino-game.com" target="_blank">Visit →</a></div>
     <div class="card"><h3>Genesis Game</h3><p>Gaming platform – Yandex & Bing SEO</p><a href="https://genesisgame.co" target="_blank">Visit →</a></div>
     <div class="card"><h3>BillionBahis</h3><p>Sports betting – Cloudflare & security SEO</p><a href="https://billionbahis.com" target="_blank">Visit →</a></div>
-    <div class="card"><h3>BestOneCasinoRanks</h3><p>Casino rankings – affiliate & trust SEO</p><a href="https://bestonecasinoranks.com" target="_blank">Visit →</a></div>
+    <div class="card"><h3>BOCR</h3><p>Casino rankings – affiliate & trust SEO</p><a href="https://bestonecasinoranks.com" target="_blank">Visit →</a></div>
   </div>
 </section>
 
 <section>
   <div class="section-title">🔐 Cybersecurity & FinTech</div>
   <div class="cards">
-    <div class="card"><h3>CybSecGroup</h3><p>Cybersecurity group – privacy‑focused SEO</p><a href="https://cybsecgroup.com" target="_blank">Visit →</a></div>
-    <div class="card"><h3>Seclab</h3><p>Cyber info platform – expert content & backlinks</p><a href="https://seclab.ge" target="_blank">Visit →</a></div>
+    <div class="card"><h3>CYBSECGROUP</h3><p>Cybersecurity group – privacy‑focused SEO</p><a href="https://cybsecgroup.com" target="_blank">Visit →</a></div>
+    <div class="card"><h3>SECLAB</h3><p>Cyber info platform – expert content & backlinks</p><a href="https://seclab.ge" target="_blank">Visit →</a></div>
     <div class="card"><h3>Sfor Trade</h3><p>Crypto trading – API & real‑time SEO</p><a href="https://sfor.trade" target="_blank">Visit →</a></div>
-    <div class="card"><h3>Sforpay</h3><p>Payment system – transactional & trust SEO</p><a href="https://sforpay.com" target="_blank">Visit →</a></div>
+    <div class="card"><h3>Sfor Pay</h3><p>Payment system – transactional & trust SEO</p><a href="https://sforpay.com" target="_blank">Visit →</a></div>
+    <div class="card"><h3>Sfor News</h3><p>Crypto News & trust SEO</p><a href="https://sfornews.com" target="_blank">Visit →</a></div>
+    <div class="card"><h3>AdminsGe</h3><p>Application Development</p><a href="https://admins.ge" target="_blank">Visit →</a></div>
+
+
   </div>
-  <!-- ⚠️ სამომავლოდ გაკეთებული პროექტები -->
-  <!-- 
-  <div class="upcoming-projects">
-    <h3>🚀 Upcoming Projects</h3>
-    <p>Projects that are currently in development or planning phase</p>
-    
-    <div class="cards" style="margin-top: 20px;">
-      <div class="card">
-        <h3>Project Name 1</h3>
-        <p>Description of your upcoming project</p>
-        <a href="#" target="_blank">Coming Soon →</a>
-      </div>
-      <div class="card">
-        <h3>Project Name 2</h3>
-        <p>Description of your upcoming project</p>
-        <a href="#" target="_blank">Coming Soon →</a>
-      </div>
-      <div class="card">
-        <h3>Project Name 3</h3>
-        <p>Description of your upcoming project</p>
-        <a href="#" target="_blank">Coming Soon →</a>
-      </div>
-    </div>
-    
-    <button class="add-project-btn" onclick="addNewProject()">+ Add New Project</button>
-  </div>
-  -->
 </section>
 
 <section>
