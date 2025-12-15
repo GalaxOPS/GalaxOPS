@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GalaxOPS • SEO • Cybersecurity • Web Platforms</title>
-  <meta name="description" content="GalaxOPS – Production SEO, Cybersecurity & High‑Performance Web Platforms. Real projects. Real traffic." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta name="description" content="GalaxOPS by Khetaguri Dimitri — Production SEO, Cybersecurity and High-Performance Web Platforms. Real projects, real traffic, real infrastructure." />
+
+<meta name="keywords" content="Khetaguri Dimitri, GalaxOPS, SEO Engineer, Technical SEO, Cybersecurity, Web Performance, DevOps, Cloud Security, GitHub Pages, Infrastructure, Digital Optimization" />
+
+<meta name="author" content="Khetaguri Dimitri" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="canonical" href="https://galaxops.github.io/GalaxOPS/" />
+
+<meta http-equiv="Content-Language" content="en" />
+<meta name="geo.region" content="GE" />
+<meta name="geo.placename" content="Georgia" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="GalaxOPS" />
+<meta property="og:title" content="Khetaguri Dimitri • GalaxOPS" />
+<meta property="og:description" content="Production SEO, Cybersecurity and High-Performance Web Platforms." />
+<meta property="og:url" content="https://galaxops.github.io/GalaxOPS/" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Khetaguri Dimitri • GalaxOPS" />
+<meta name="twitter:description" content="SEO, Cybersecurity & High-Performance Web Platforms." />
+
+<meta name="theme-color" content="#0d1117" />
+<meta name="color-scheme" content="dark light" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Khetaguri Dimitri",
+  "url": "https://galaxops.github.io/GalaxOPS/",
+  "jobTitle": "SEO & Cybersecurity Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "GalaxOPS"
+  },
+  "sameAs": [
+    "https://github.com/galaxops"
+  ]
+}
+</script>
   <style>
     :root {
       --bg: #070b14;
@@ -142,7 +184,6 @@
       gap: 22px;
     }
 
-    /* გახდა უფრო გამჭირვალე ეფექტი */
     .card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(88,166,255,0.15);
@@ -225,7 +266,6 @@
       transform: translateX(5px);
     }
 
-    /* Accounts Section Styling */
     .accounts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,7 +273,6 @@
       margin: 40px 0;
     }
 
-    /* აქაც გახადე გამჭირვალე */
     .account-card {
       background: rgba(88,166,255,0.05);
       border: 1px solid rgba(88,166,255,0.2);
@@ -354,8 +393,7 @@
       }
     }
 
-    /* ახალი პროექტების სექციის სტილი */
-    /* ⚠️ აქ შეგიძლია დაამატო სამომავლოდ გაკეთებული პროექტები */
+    /* ⚠️ სამომავლოდ გაკეთებული პროექტები */
     .upcoming-projects {
       background: rgba(88,166,255,0.03);
       border: 1px dashed rgba(88,166,255,0.3);
@@ -508,7 +546,6 @@
 
 <div class="led-effect"></div>
 
-<!-- Floating particles -->
 <div class="particles" id="particles"></div>
 
 <header>
@@ -610,7 +647,7 @@
     <div class="card"><h3>Sfor Trade</h3><p>Crypto trading – API & real‑time SEO</p><a href="https://sfor.trade" target="_blank">Visit →</a></div>
     <div class="card"><h3>Sforpay</h3><p>Payment system – transactional & trust SEO</p><a href="https://sforpay.com" target="_blank">Visit →</a></div>
   </div>
-  <!-- ⚠️ აქ შეგიძლია დაამატო სამომავლოდ გაკეთებული პროექტები -->
+  <!-- ⚠️ სამომავლოდ გაკეთებული პროექტები -->
   <!-- 
   <div class="upcoming-projects">
     <h3>🚀 Upcoming Projects</h3>
@@ -656,11 +693,10 @@
 </section>
 
 <footer>
-  © GalaxOPS • GitHub Pages • /seo
+  2025 © GalaxOPS • GitHub Pages
 </footer>
 
 <script>
-  // Create floating particles
   document.addEventListener('DOMContentLoaded', function() {
     const particlesContainer = document.getElementById('particles');
     const particleCount = 30;
@@ -669,12 +705,10 @@
       const particle = document.createElement('div');
       particle.classList.add('particle');
       
-      // Add HackTheBox particles randomly
       if (Math.random() > 0.7) {
         particle.classList.add('hackthebox-particle');
       }
       
-      // Random size
       const size = Math.random() * 4 + 1;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
@@ -682,7 +716,6 @@
       // Random position
       particle.style.left = `${Math.random() * 100}%`;
       
-      // Random color with opacity
       const colors = [
         'rgba(0, 234, 255, 0.2)',
         'rgba(255, 0, 255, 0.15)',
@@ -692,14 +725,12 @@
       ];
       particle.style.background = colors[Math.floor(Math.random() * colors.length)];
       
-      // Random animation
       particle.style.animationDuration = `${Math.random() * 20 + 15}s`;
       particle.style.animationDelay = `${Math.random() * 5}s`;
       
       particlesContainer.appendChild(particle);
     }
     
-    // Add hover effect to cards
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
       card.addEventListener('mouseenter', function() {
@@ -712,7 +743,6 @@
     });
   });
 
-  // Function to add new project (დამატებითი ფუნქციონალი)
   function addNewProject() {
     const projectName = prompt("Enter project name:");
     const projectDescription = prompt("Enter project description:");
@@ -730,14 +760,11 @@
         </div>
       `;
       
-      // You would need to save this to a database or localStorage
       alert("Project added! (In a real implementation, this would save to a database)");
       
-      // For demo purposes, we'll just show an alert
       console.log("New Project:", { projectName, projectDescription, projectURL });
     }
   }
 </script>
-
 </body>
 </html>
